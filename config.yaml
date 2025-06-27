@@ -1,0 +1,15 @@
+database:
+  type: "sqlite"
+  name: "flipkart_products.db"
+  
+scraper:
+  base_url: "https://www.flipkart.com"
+  search_endpoint: "/search"
+  max_pages: 3
+  delay_between_requests: 2
+  timeout: 30
+  headless: true
+  
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} - {message}"
