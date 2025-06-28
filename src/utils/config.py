@@ -4,15 +4,19 @@ import yaml
 from pathlib import Path
 from typing import Dict, Any
 from pydantic import BaseModel, Field
+from dotenv import load_dotenv
 
+# Load environment variables from the .env file
+load_dotenv()
 
+# Define configuration models using Pydantic
 class DatabaseConfig(BaseModel):
     type: str = "sqlite"
-    name: str = "flipkart_products.db"
-    host: str = "localhost"
-    port: int = 3306
-    username: str = ""
-    password: str = ""
+    name: str = os.getenv("DB_NAME", "flipkart_products")
+    host: str = os.getenv("DB_HOST", "localhost")
+    port: int = int(os.getenv("DB_PORT", 3306)) 
+    username: str = os.getenv("DB_USER", "root")
+    password: str = os.getenv("DB_PASSWORD", "")
 
 
 class ScraperConfig(BaseModel):
