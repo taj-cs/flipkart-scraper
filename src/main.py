@@ -67,7 +67,8 @@ class FlipkartScraperApp:
 
 
 def main():
-    """Main function"""
+    """Entry point for the application"""
+    # Parse command line arguments
     parser = argparse.ArgumentParser(description='Flipkart Product Scraper')
     parser.add_argument('keyword', nargs='?', help='Search keyword (e.g., "smartphone")')
     parser.add_argument('--pages', '-p', type=int, default=3, help='Number of pages to scrape (default: 3)')

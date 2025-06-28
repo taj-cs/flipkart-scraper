@@ -77,7 +77,7 @@ class FlipkartScraper(BaseScraper):
             await self.page.goto(
                 url, 
                 wait_until='domcontentloaded',
-                timeout=20000  
+                timeout=30000  
             )
             
             # Wait for products to load with multiple fallback selectors
@@ -93,7 +93,7 @@ class FlipkartScraper(BaseScraper):
             product_found = False
             for selector in selectors_to_try:
                 try:
-                    await self.page.wait_for_selector(selector, timeout=10000)
+                    await self.page.wait_for_selector(selector, timeout=20000)
                     product_found = True
                     app_logger.info(f"Found products using selector: {selector}")
                     break
