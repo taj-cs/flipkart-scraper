@@ -4,8 +4,8 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import SQLAlchemyError
 from .models import Base, ProductInfo
-from ..utils.config import config_manager
-from ..utils.logger import app_logger
+from utils.config import config_manager
+from utils.logger import app_logger
 
 
 class DatabaseManager:
