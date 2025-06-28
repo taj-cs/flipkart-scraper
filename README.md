@@ -53,7 +53,8 @@ mkdir logs
 
 ## 🔧 Configuration
 
-The application uses `config.yaml` for configuration. Default settings work out of the box, but you can customize for DB, Scraping, and Logging:
+The application uses `config.yaml` for configuration. Default settings work out of the box, but you can customize for DB, Scraping, and Logging.
+**Tweaking the `utils/config.py` is recommended for customization.**
 
 
 ## 🚀 Usage
