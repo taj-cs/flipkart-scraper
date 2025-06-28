@@ -12,7 +12,7 @@ load_dotenv()
 # Define configuration models using Pydantic
 class DatabaseConfig(BaseModel):
     type: str = "sqlite"
-    name: str = os.getenv("DB_NAME", "flipkart_products")
+    name: str = os.getenv("DB_NAME", "flipkart_products.db")
     host: str = os.getenv("DB_HOST", "localhost")
     port: int = int(os.getenv("DB_PORT", 3306)) 
     username: str = os.getenv("DB_USER", "root")
@@ -42,7 +42,7 @@ class Config(BaseModel):
 class ConfigManager:
     """Configuration manager for the application"""
     
-    def __init__(self, config_path: str = "config.yaml"):
+    def __init__(self, config_path: str = "../../config.yaml"):
         self.config_path = Path(config_path)
         self._config = None
     
